@@ -25,17 +25,12 @@ function getRandomInt(min, max) {
 //     }
 //    return (array + '').replace(/,/g, '').replace(/ /g, ',');
 // }
-Number.prototype.format = function (spacing) {
+Number.prototype.format = function (spacing = ',') {
   var arr = String(this);
   arr = arr.replace(/,/g, '');
   var array = arr.split('');
   var start;
-  var fill;
-  if (!spacing) {
-    fill = ',';
-  } else {
-    fill = spacing;
-  }
+  var fill = spacing;
   if (arr.includes('.')) {
     start = arr.split('.')[0];
   } else {
